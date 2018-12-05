@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SMU-匿名社区</title>
+</head>
+<body>
+
+
+
+{% for content in contents %}
+    <p>
+        {{user.sex }},
+        {{ user.year + <br> }},  
+        {{ user.mess}},  
+        
+    </p>
+{% endfor %}
+
+<form >
+	{%csrf_token%}
+	发送的消息: <input type="text" name="mess"><br>
+	
+	性别：<br>
+	<input type="radio" name="sex" value="male">Male<br>
+	<input type="radio" name="sex" value="female">Female<br>
+	
+	年级：<select name="year">
+	<option value="2015">2015</option>
+	<option value="2016">2016</option>
+	<option value="2017">2017</option>
+	<option value="2018">2018</option>
+	</select>
+	
+	<input type="submit">  
+
+</form>
+
+
+</body>
+</html>

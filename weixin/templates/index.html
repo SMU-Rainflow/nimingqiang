@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SMU-匿名社区</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+	
+	
+	<div data-role="page">
+	<div data-role="header">
+	<h1>SMU-匿名社区</h1>
+	</div>
+	
+	<div>
+	
+	{% for info in Data %}
+	<div>
+	{{info.year}}级
+	{{info.sex}}<br>
+	{{info.mess}}<br>
+	{{info.time}} <HR>
+	</div>
+	{% endfor %}
+		
+	</div>
+	
+	<div data-role="main" class="ui-content">
+	
+	<form method="post" action="recived">
+		{%csrf_token%}
+	<label for="fname">消息</label>
+	<input type="text" name="mess" id="mess">	
+	<fieldset data-role="controlgroup">
+	<legend>性别:</legend>
+	<label for="male">小哥哥</label>
+	<input type="radio" name="sex" id="male" value="小哥哥">
+	<label for="female">小姐姐</label>
+	<input type="radio" name="sex" id="female" value="小姐姐"> 
+	</fieldset>
+	<fieldset class="ui-field-contain">
+	<label for="year">选择年级</label>
+	<select name="year" id="year">
+	<option value="2015">2015</option>
+	<option value="2016">2016</option>
+	<option value="2017">2017</option>
+	<option value="2018">2018</option>
+	</select>
+</fieldset>
+
+	  <input type="submit" data-inline="true" value="提交">
+	</form>
+  </div>
+</div>
+
+</body>
+</html>
