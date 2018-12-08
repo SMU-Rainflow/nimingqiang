@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>SMU-匿名社区</title>
+</head>
+<body>
+	<div data-role="main" class="ui-content">
+	
+	<form method="POST" action="recive">
+		{%csrf_token%}
+
+	<label for="mess">消息</label>
+	<input type="text" name="mess" id="mess">	
+	
+	<fieldset data-role="controlgroup">
+	<legend>性别:</legend>
+	<label for="male">小哥哥</label>
+	<input type="radio" name="sex" id="male" value="小哥哥">
+	<label for="female">小姐姐</label>
+	<input type="radio" name="sex" id="female" value="小姐姐"> 
+	</fieldset>
+	
+	<fieldset class="ui-field-contain">
+	<label for="year">选择年级</label>
+	<select name="year" id="year">
+	<option value="2015">2015</option>
+	<option value="2016">2016</option>
+	<option value="2017">2017</option>
+	<option value="2018">2018</option>
+	</select>
+	</fieldset>
+
+	<input type="submit" data-inline="true" value="提交">
+
+	</form>
+
+	<form action="index">
+		<input type="submit" data-inline="true" value="返回首页">
+	</a>
+	
+  </div>
+
+</body>
+</html>>
